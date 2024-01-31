@@ -19,11 +19,18 @@ export interface Sub {
     nick: string
     subMonth: number
     avatar: string
-    description: string
+    description?: string
+}
+
+export interface AppState {
+    subs: Array<Sub>
+    newSubsNumber: number
 }
 
 function App() {
-    const [subs, setSubs] = useState<Array<Sub>>([])
+    const [subs, setSubs] = useState<AppState['subs']>([])
+    const [newSubsNumber, setNewSubsNumber] =
+        useState<AppState['newSubsNumber']>(0)
 
     React.useEffect(() => {
         setSubs(INITIAL_STATE)
