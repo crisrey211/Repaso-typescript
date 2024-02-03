@@ -13,7 +13,3 @@ export interface AppState {
 interface Props {
     subs: Array<Sub>
 }
-
-export interface FormState {
-    inputValues: Sub
-}

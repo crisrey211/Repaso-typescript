@@ -1,7 +1,15 @@
 import React from 'react'
-import { FormState } from '../types'
+import { Sub } from '../types'
 
-export const Form = () => {
+export interface FormState {
+    inputValues: Sub
+}
+
+export interface FormProps {
+    onNewSub: React.Dispatch<React.SetStateAction<Sub[]>>
+}
+
+export const Form = ({ onNewSub }: FormProps) => {
     const [inputValues, setInputValues] = React.useState<
         FormState['inputValues']
     >({
@@ -11,7 +19,10 @@ export const Form = () => {
         description: '',
     })
 
-    const handleSubmit = () => {}
+    const handleSubmit = (ev: React.FormEvent<HTMLFormElement>) => {
+        ev.preventDefault()
+        onNewSub((subs) => [...subs, inputValues])
+    }
 
     const handleChange = (
         ev: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -49,6 +60,7 @@ export const Form = () => {
                     name="description"
                     placeholder="description"
                 />
+                <button>Enviar formulario</button>
             </form>
         </div>
     )
