@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './App.css'
 import { List } from './Components/List'
 import { Form } from './Components/Form'
-import { AppState } from './types'
+import { AppState, Sub } from './types'
 
 const INITIAL_STATE = [
     {
@@ -32,11 +32,15 @@ function App() {
         setSubs(INITIAL_STATE)
     }, [])
 
+    const handleNewSub = (onNewSub: Sub): void => {
+        setSubs((prevState) => [...prevState, onNewSub])
+    }
+
     return (
         <div className="App">
             <h1>CR subs</h1>
             <List subs={subs} />
-            <Form onNewSub={setSubs} />
+            <Form onNewSub={handleNewSub} />
         </div>
     )
 }
