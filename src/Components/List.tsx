@@ -6,7 +6,7 @@ export const List = ({ subs }: Props) => {
             <li key={item.nick}>
                 <img src={item.avatar} alt={`Avatar for ${item.nick}`} />
                 <h4>
-                    {item.nick} <small>{item.subMonth}</small>
+                    {item.nick} <small>{item.subMonths}</small>
                 </h4>
                 <p>{item.description}</p>
             </li>

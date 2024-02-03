@@ -7,18 +7,18 @@ import { AppState } from './types'
 const INITIAL_STATE = [
     {
         nick: 'dapelu',
-        subMonth: 3,
+        subMonths: 3,
         avatar: 'https://i.pravatar.cc/150?u=dapelu',
         description: 'Dapelu hace de moredador a veces',
     },
     {
         nick: 'Christian',
-        subMonth: 987,
+        subMonths: 987,
         avatar: 'https://i.pravatar.cc/150?u=sergio_serrano',
     },
     {
         nick: 'Miguel',
-        subMonth: 987,
+        subMonths: 987,
         avatar: 'https://i.pravatar.cc/150?u=midu',
     },
 ]
