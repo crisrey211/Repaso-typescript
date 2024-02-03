@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './App.css'
 import { List } from './Components/List'
+import { Form } from './Components/Form'
 
 const INITIAL_STATE = [
     {
@@ -13,6 +14,11 @@ const INITIAL_STATE = [
         nick: 'Christian',
         subMonth: 987,
         avatar: 'https://i.pravatar.cc/150?u=sergio_serrano',
+    },
+    {
+        nick: 'Miguel',
+        subMonth: 987,
+        avatar: 'https://i.pravatar.cc/150?u=midu',
     },
 ]
 
@@ -41,6 +47,7 @@ function App() {
         <div className="App">
             <h1>CR subs</h1>
             <List subs={subs} />
+            <Form />
         </div>
     )
 }
