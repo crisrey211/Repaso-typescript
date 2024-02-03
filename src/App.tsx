@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './App.css'
 import { List } from './Components/List'
 import { Form } from './Components/Form'
+import { AppState } from './types'
 
 const INITIAL_STATE = [
     {
@@ -21,18 +22,6 @@ const INITIAL_STATE = [
         avatar: 'https://i.pravatar.cc/150?u=midu',
     },
 ]
-
-export interface Sub {
-    nick: string
-    subMonth: number
-    avatar: string
-    description?: string
-}
-
-export interface AppState {
-    subs: Array<Sub>
-    newSubsNumber: number
-}
 
 function App() {
     const [subs, setSubs] = useState<AppState['subs']>([])

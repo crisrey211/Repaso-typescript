@@ -1,11 +1,4 @@
-interface Props {
-    subs: Array<{
-        nick: string
-        subMonth: number
-        avatar: string
-        description?: string
-    }>
-}
+import { Props } from '../types'
 
 export const List = ({ subs }: Props) => {
     const renderList = (): JSX.Element[] => {

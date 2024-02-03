@@ -1,16 +1,12 @@
 import React from 'react'
-
-export interface FormState {
-    nick: string
-    subMonths: number
-    avatar: string
-    description: string
-}
+import { FormState } from '../types'
 
 export const Form = () => {
-    const [inputValues, setInputValues] = React.useState({
+    const [inputValues, setInputValues] = React.useState<
+        FormState['inputValues']
+    >({
         nick: '',
-        subMonth: 0,
+        subMonths: 0,
         avatar: '',
         description: '',
     })
@@ -35,7 +31,7 @@ export const Form = () => {
                 />
                 <input
                     onChange={handleChange}
-                    value={inputValues.subMonth}
+                    value={inputValues.subMonths}
                     type="number"
                     name="subMonths"
                     placeholder="subMonths"
